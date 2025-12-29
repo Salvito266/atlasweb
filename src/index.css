@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos globales */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: transparent; /* tu color atlas-bg */
+  color: white;
+  font-family: theme('fontFamily.sans');
+}
+
+/* Scroll suave con Lenis necesita que el body pueda scrollear */
+body {
+  overflow-x: hidden;
+  cursor: auto; /* aseguramos que el cursor sea visible */
+}
+
+/* Opcional: glass effect reutilizable */
+.glass {
+  backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
