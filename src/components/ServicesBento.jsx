@@ -14,7 +14,7 @@ const cards = [
     cols: "md:col-span-2",
     rows: "md:row-span-2",
     desc:
-      "Arquitecturas escalables, APIs idempotentes y frontends con microinteracciones de alto rendimiento.",
+      "Construimos exactamente lo que tu negocio necesita. Escuchamos tus requerimientos, te asesoramos con nuestra experiencia y desarrollamos las funciones que nos pidas con rigor técnico y atención al detalle. Cada entrega está pensada para que tu sistema funcione tal como lo imaginaste, con la confianza de que tendrás un producto sólido, transparente y alineado a tus objetivos. Nuestro compromiso es que quedes plenamente satisfecho con un servicio que combina personalización y excelencia.",
     tag: "Entrega predecible",
   },
   {
@@ -23,7 +23,7 @@ const cards = [
     cols: "md:col-span-1",
     rows: "md:row-span-1",
     desc:
-      "Modelos productivos, RAG con fuentes verificables, feature stores y evaluación continua.",
+      "Inteligencia artificial sencilla, confiable y diseñada para dar valor real a tu negocio.",
     tag: "Precisión",
   },
   {
@@ -32,7 +32,7 @@ const cards = [
     cols: "md:col-span-1",
     rows: "md:row-span-1",
     desc:
-      "Infra reproducible (IaC), observabilidad end-to-end, costos controlados y seguridad por diseño.",
+      "Operaciones en la nube seguras, eficientes y con continuidad garantizada para tu negocio.",
     tag: "SLA real",
   },
   {
@@ -41,7 +41,7 @@ const cards = [
     cols: "md:col-span-2",
     rows: "md:row-span-1",
     desc:
-      "Hardening, respuesta ante incidentes, auditorías y cumplimiento para entornos regulados.",
+      "Seguridad total, confianza garantizada y cumplimiento normativo para proteger tu negocio sin compromisos.",
     tag: "Confianza",
   },
 ]
@@ -59,7 +59,7 @@ export default function ServicesBento() {
         ease: "power2.out",
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 90%", // dispara antes para evitar invisibilidad
+          start: "top 90%",
         },
       })
     }, sectionRef)
@@ -86,8 +86,8 @@ export default function ServicesBento() {
                 c.rows
               )}
               whileHover={{
-                scale: 1.03,
-                boxShadow: "0 0 20px rgba(255,255,255,0.1)",
+                scale: 1.04,
+                boxShadow: "0 0 30px rgba(0,200,255,0.3)",
               }}
               transition={{ type: "spring", stiffness: 200, damping: 15 }}
             >
@@ -99,7 +99,13 @@ export default function ServicesBento() {
               />
 
               <div className="flex items-center gap-3 relative z-10">
-                <c.icon className="h-5 w-5 text-atlas-primary" />
+                {/* Ícono flotando */}
+                <motion.div
+                  animate={{ y: [0, -6, 0] }}
+                  transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+                >
+                  <c.icon className="h-5 w-5 text-atlas-primary" />
+                </motion.div>
                 <h3 className="text-lg font-semibold">{c.title}</h3>
                 <span className="ml-auto text-[10px] px-2 py-1 rounded-full bg-white/5 border border-white/10">
                   {c.tag}

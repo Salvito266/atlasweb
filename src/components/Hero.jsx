@@ -1,129 +1,69 @@
-
-/* NO SE VE VIDEO DE FONDO */
-
-
 import { motion } from "framer-motion"
 import { ArrowRight, PlayCircle } from "lucide-react"
 
-
 export default function Hero() {
   return (
-    <section id="hero" className="pt-28 relative h-screen overflow-hidden">
+    <section id="hero" className="relative h-screen overflow-hidden flex items-start justify-center pt-16">
       {/* Video De Fondo */}
       <video
-          className="absolute inset-0 w-full h-full object-cover -z-10"
-          autoPlay
-          loop
-          muted
-          playsInline
-          poster="/images/a.jpg"
-        >
-          <source src="/videos/wave.webm" type="video/webm" />
-          <source src="/videos/wave.mp4" type="video/mp4" />
+        className="absolute inset-0 w-full h-full object-cover z-0"
+        autoPlay
+        loop
+        muted
+        playsInline
+        poster="/images/a.jpg"
+      >
+        <source src="/videos/wave.webm" type="video/webm" />
+        <source src="/videos/wave.mp4" type="video/mp4" />
       </video>
-      <div className="relative z-10 mx-auto max-w-8xl px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          {/* Texto principal */}
-          <div className="lg:col-span-7">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight"
-            >
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-atlas-primary via-white to-atlas-accent">
-                Ingeniería de software de precisión
-              </span>
-              <br />
-              <span className="text-white/80">
-                para empresas que no aceptan errores.
-              </span>
-            </motion.h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              className="mt-6 max-w-2xl text-base sm:text-lg text-white/70"
-            >
-              Diseñamos y desplegamos sistemas críticos con rigor de producción:
-              observabilidad integral, pipelines reproducibles y UX sin fricción.
-            </motion.p>
+      {/* Overlay degradado para legibilidad */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black z-0" />
 
-            {/* Botones CTA */}
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <motion.a
-                href="#contact"
-                data-hoverable="true"
-                className="inline-flex items-center gap-2 rounded-xl bg-atlas-primary px-5 py-3 text-sm font-semibold shadow-glow hover:bg-atlas-primary/90"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <ArrowRight className="h-4 w-4" />
-                Comenzar proyecto
-              </motion.a>
-              <motion.a
-                href="#stack"
-                data-hoverable="true"
-                className="inline-flex items-center gap-2 rounded-xl border border-white/15 px-5 py-3 text-sm font-semibold hover:bg-white/5"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <PlayCircle className="h-4 w-4" />
-                Ver Stack Tecnológico
-              </motion.a>
-            </div>
-          </div>
+      {/* Contenido más arriba */}
+      <div className="relative z-10 text-center max-w-4xl px-6">
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight"
+        >
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-atlas-primary via-white to-atlas-accent">
+            Ingeniería de software de precisión <br />
+            para empresas que no aceptan errores.
+          </span>
+        </motion.h1>
 
-          {/* Card visual derecha */}
-          <div className="lg:col-span-5">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-              className="relative rounded-2xl glass p-6"
-            >
-              <div className="aspect-video rounded-xl bg-black/30 border border-white/10 flex items-center justify-center">
-                <div className="text-xs text-white/60 text-center px-4">
-                  Dashboard de rendimiento, auditorías de seguridad y despliegues canary.
-                </div>
-              </div>
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          className="mt-6 text-base sm:text-lg text-white/80"
+        >
+          Diseñamos y desplegamos sistemas críticos con rigor de producción:
+          observabilidad integral, pipelines reproducibles y UX sin fricción.
+        </motion.p>
 
-              {/* Bloques con stagger */}
-              <motion.div
-                initial="hidden"
-                animate="visible"
-                variants={{
-                  hidden: { opacity: 0, y: 20 },
-                  visible: {
-                    opacity: 1,
-                    y: 0,
-                    transition: { staggerChildren: 0.2 }
-                  }
-                }}
-                className="mt-4 grid grid-cols-3 gap-3 text-xs text-white/60"
-              >
-                <motion.div
-                  variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-                  className="rounded-lg border border-white/10 p-3"
-                >
-                  SLIs/SLAs
-                </motion.div>
-                <motion.div
-                  variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-                  className="rounded-lg border border-white/10 p-3"
-                >
-                  CI/CD
-                </motion.div>
-                <motion.div
-                  variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-                  className="rounded-lg border border-white/10 p-3"
-                >
-                  Zero-downtime
-                </motion.div>
-              </motion.div>
-            </motion.div>
-          </div>
+        {/* Botones CTA centrados */}
+        <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+          <motion.a
+            href="#contact"
+            className="inline-flex items-center gap-2 rounded-xl bg-atlas-primary px-6 py-3 text-sm font-semibold shadow-lg hover:bg-atlas-primary/90 text-white"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <ArrowRight className="h-4 w-4" />
+            Comenzar proyecto
+          </motion.a>
+          <motion.a
+            href="#stack"
+            className="inline-flex items-center gap-2 rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold hover:bg-white/10 text-white"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <PlayCircle className="h-4 w-4" />
+            Ver Stack Tecnológico
+          </motion.a>
         </div>
       </div>
 

@@ -7,7 +7,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: transparent; /* tu color atlas-bg */
+  background: #000000; /* tu color atlas-bg */
   color: white;
   font-family: theme('fontFamily.sans');
 }

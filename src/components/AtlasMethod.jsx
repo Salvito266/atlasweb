@@ -4,24 +4,24 @@ import { Search, Rocket, UploadCloud } from 'lucide-react'
 const steps = [
   {
     id: '01',
-    title: 'Discovery',
+    title: 'Contacto',
     icon: Search,
     desc:
-      'Levantamiento técnico y de negocio. Riesgos, métricas, arquitectura y alcance con trazabilidad.',
+      'El cliente nos comparte sus necesidades y objetivos. Levantamos la información clave y definimos cómo aportar valor con total claridad y confianza',
   },
   {
     id: '02',
-    title: 'Sprint',
+    title: 'Desarrollo',
     icon: Rocket,
     desc:
-      'Iteraciones cortas con entregables verificables. QA automatizado, observabilidad y performance budgets.',
+      'Trabajamos en el proyecto con iteraciones ágiles y entregables verificables. Mostramos avances constantes y aseguramos que cada etapa cumpla con los estándares de calidad y rendimiento.',
   },
   {
     id: '03',
-    title: 'Deploy',
+    title: 'Entrega',
     icon: UploadCloud,
     desc:
-      'Despliegue canary/blue-green, infraestructura como código y monitoreo activo post-release.',
+      'Presentamos el resultado final implementado y optimizado. La página queda lista para producción, aprobada por el cliente y respaldada con soporte activo para un lanzamiento seguro.',
   },
 ]
 
@@ -35,9 +35,9 @@ export default function AtlasMethod() {
         </div>
 
         <div className="relative mt-8">
-          {/* Animated connection line */}
+          {/* Línea glowing */}
           <motion.div
-            className="absolute left-0 right-0 top-12 h-0.5 bg-gradient-to-r from-atlas-primary/50 via-white/20 to-atlas-accent/50"
+            className="absolute left-0 right-0 top-12 h-0.5 bg-gradient-to-r from-atlas-primary/50 via-white/20 to-atlas-accent/50 glow-line"
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true, amount: 0.4 }}
@@ -53,11 +53,18 @@ export default function AtlasMethod() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
-                transition={{ delay: idx * 0.1, duration: 0.6 }}
+                transition={{ delay: idx * 0.2, duration: 0.6 }}
+                whileHover={{ boxShadow: '0 0 20px rgba(0,200,255,0.6)' }} // highlight dinámico
               >
                 <div className="flex items-center gap-3">
                   <div className="text-xs font-mono text-white/60">{s.id}.</div>
-                  <s.icon className="h-5 w-5 text-atlas-primary" />
+                  {/* Ícono flotando */}
+                  <motion.div
+                    animate={{ y: [0, -6, 0] }}
+                    transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+                  >
+                    <s.icon className="h-5 w-5 text-atlas-primary" />
+                  </motion.div>
                   <h3 className="text-lg font-semibold">{s.title}</h3>
                 </div>
                 <p className="mt-3 text-sm text-white/70">{s.desc}</p>

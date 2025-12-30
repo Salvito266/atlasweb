@@ -3,18 +3,29 @@ import { Send } from "lucide-react"
 
 export default function Contact() {
   return (
-    <section id="contact" className="mt-16">
+    <section id="contact" className="border-t border-white/10 mt-4 pt-8">
       <div className="mx-auto max-w-8xl px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          {/* Form */}
+        {/* Grid con stagger reveal */}
+        <motion.div
+          className="grid grid-cols-1 lg:grid-cols-12 gap-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.2 } },
+          }}
+        >
+          {/* Formulario */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
+            variants={{
+              hidden: { opacity: 0, y: 40 },
+              visible: { opacity: 1, y: 0 },
+            }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="lg:col-span-5 rounded-2xl glass p-6"
           >
-            <h2 className="text-2xl font-bold">Contacto</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold">Contacto</h2>
             <p className="mt-2 text-sm text-white/60">
               Detalla objetivos y restricciones. Respondemos con un plan técnico.
             </p>
@@ -56,10 +67,11 @@ export default function Contact() {
 
           {/* Reactor energético */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            variants={{
+              hidden: { opacity: 0, y: 40 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="lg:col-span-7 rounded-2xl glass p-6 relative overflow-hidden flex flex-col items-center justify-center"
           >
             <motion.h3
@@ -75,31 +87,27 @@ export default function Contact() {
               Iteramos con rigor técnico y creatividad para mantener sistemas vivos y resilientes.
             </motion.p>
 
-            {/* Bola de energía compleja */}
+            {/* Bola de energía */}
             <motion.div
               className="mt-8 relative w-full h-64 flex items-center justify-center cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.9 }}
             >
-              {/* Capa externa: halo difuso */}
               <motion.div
                 className="absolute w-56 h-56 rounded-full bg-gradient-to-r from-atlas-primary to-atlas-accent blur-3xl opacity-30"
                 animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
                 transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
               />
-              {/* Capa intermedia: anillo pulsante */}
               <motion.div
                 className="absolute w-40 h-40 rounded-full border-4 border-atlas-primary/50"
                 animate={{ scale: [1, 1.3, 1], opacity: [0.6, 1, 0.6] }}
                 transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
               />
-              {/* Núcleo brillante */}
               <motion.div
                 className="absolute w-24 h-24 rounded-full bg-gradient-to-r from-atlas-accent to-atlas-primary shadow-[0_0_40px_rgba(94,139,255,0.8)]"
                 animate={{ scale: [1, 1.5, 1], opacity: [0.8, 1, 0.8] }}
                 transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
               />
-              {/* Núcleo interno: chispa */}
               <motion.div
                 className="absolute w-8 h-8 rounded-full bg-white"
                 animate={{ scale: [1, 2, 1], opacity: [1, 0.6, 1] }}
@@ -107,7 +115,7 @@ export default function Contact() {
               />
             </motion.div>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )

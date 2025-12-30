@@ -18,7 +18,7 @@ export default function ParallaxSection() {
   return (
     <section
       ref={ref}
-      className="relative h-[120vh] flex items-center justify-center bg-gradient-to-b from-atlas-bg to-black"
+      className="relative h-[120vh] flex items-center justify-center bg-gradient-to-b from-black to-atlas-bg"
     >
       <motion.div
         style={{ y }}

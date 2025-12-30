@@ -10,12 +10,12 @@ export default {
       colors: {
         atlas: {
           bg: '#0B0F1A',
-          surface: '#0F1424',
+          surface: '#000000',
           primary: '#5E8BFF',
           accent: '#8E7DFF',
           glow1: '#3B82F6',
           glow2: '#A78BFA',
-          border: '#1E2A44',
+          border: '#000000',
         },
       },
       maxWidth: {
