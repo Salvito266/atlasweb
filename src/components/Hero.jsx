@@ -3,7 +3,7 @@ import { ArrowRight, PlayCircle } from "lucide-react"
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative h-screen overflow-hidden flex items-start justify-center pt-16">
+    <section id="hero" className="relative h-screen overflow-hidden flex items-center justify-center">
       {/* Video De Fondo */}
       <video
         className="absolute inset-0 w-full h-full object-cover z-0"

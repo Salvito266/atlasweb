@@ -3,7 +3,6 @@ import Lenis from "@studio-freight/lenis"
 
 // Tus componentes
 import GlowBackground from "./components/GlowBackground.jsx"
-import NavBar from "./components/NavBar.jsx"
 import Hero from "./components/Hero.jsx"
 import AtlasMethod from "./components/AtlasMethod.jsx"
 import ServicesBento from "./components/ServicesBento.jsx"
@@ -45,7 +44,7 @@ export default function App() {
 
 
       {/* Content */}
-      <main className="pt-24">
+      <main className="">
         <Hero />
         <ParallaxSection />
         <AtlasMethod />
