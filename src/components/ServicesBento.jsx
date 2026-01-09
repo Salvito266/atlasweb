@@ -36,7 +36,7 @@ const cards = [
     tag: "SLA real",
   },
   {
-    title: "Ciberseguridad",
+    title: "Seguridad",
     icon: ShieldCheck,
     cols: "md:col-span-2",
     rows: "md:row-span-1",
