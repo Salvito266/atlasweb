@@ -29,7 +29,7 @@ export default function Hero() {
           className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight drop-shadow-[0_0_20px_rgba(0,200,255,0.6)]"
         >
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-atlas-primary via-white to-atlas-accent">
-            Atlas: Ingeniería de Software
+            Atlas Devs
           </span>
         </motion.h1>
 
