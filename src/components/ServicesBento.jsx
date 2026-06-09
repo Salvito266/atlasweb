@@ -9,6 +9,16 @@ gsap.registerPlugin(ScrollTrigger)
 
 const cards = [
   {
+    title: "FacuGO Copiloto Clínico",
+    icon: Stethoscope,
+    desc: "Automatización de la atención con IA aplicada. Optimizamos la gestión de pacientes, reducimos la carga administrativa y agilizamos los flujos de trabajo médicos.",
+    tag: "IA Clínica",
+    glow: "bg-purple-500/20",
+    iconColor: "text-purple-400",
+    className: "md:col-span-2 lg:col-span-3",
+    link: "/facugo.html",
+  },
+  {
     title: "Software a medida",
     icon: Code2,
     desc: "Construimos exactamente lo que tu negocio necesita. Escuchamos tus requerimientos, te asesoramos con nuestra experiencia y desarrollamos las funciones que nos pidas con rigor técnico y atención al detalle.",
@@ -56,15 +66,7 @@ const cards = [
     glow: "bg-rose-500/20",
     iconColor: "text-rose-400",
   },
-  {
-    title: "FacuGO Copiloto Clínico",
-    icon: Stethoscope,
-    desc: "Automatización de la atención con IA aplicada. Optimizamos la gestión de pacientes, reducimos la carga administrativa y agilizamos los flujos de trabajo médicos.",
-    tag: "IA Clínica",
-    glow: "bg-purple-500/20",
-    iconColor: "text-purple-400",
-    className: "md:col-span-2 lg:col-span-3",
-  },
+  
 ]
 
 export default function ServicesBento() {
@@ -98,42 +100,47 @@ export default function ServicesBento() {
 
         {/* Grid uniforme */}
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {cards.map((c) => (
-            <motion.div
-              key={c.title}
-              className={clsx(
-                "service-card rounded-3xl p-6 border relative overflow-hidden",
-                "border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.02] backdrop-blur-xl",
-                c.className
-              )}
-              whileHover={{
-                scale: 1.04,
-                boxShadow: "0 0 30px rgba(0,200,255,0.3)",
-              }}
-              transition={{ type: "spring", stiffness: 200, damping: 15 }}
-            >
-              {/* Glow dinámico con color personalizado */}
-              <motion.div
-                className={`absolute right-[-20%] bottom-[-20%] w-2/3 h-2/3 ${c.glow} blur-3xl rounded-full`}
-                animate={{ scale: [1, 1.1, 1] }}
-                transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-              />
-
-              <div className="flex items-center gap-3 relative z-10">
+          {cards.map((c) => {
+            const CardTag = c.link ? motion.a : motion.div
+            return (
+              <CardTag
+                key={c.title}
+                href={c.link}
+                className={clsx(
+                  "service-card rounded-3xl p-6 border relative overflow-hidden block text-left no-underline text-white",
+                  "border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.02] backdrop-blur-xl",
+                  c.className,
+                  c.link && "cursor-pointer hover:border-purple-500/50"
+                )}
+                whileHover={{
+                  scale: 1.04,
+                  boxShadow: c.link ? "0 0 30px rgba(168,85,247,0.4)" : "0 0 30px rgba(0,200,255,0.3)",
+                }}
+                transition={{ type: "spring", stiffness: 200, damping: 15 }}
+              >
+                {/* Glow dinámico con color personalizado */}
                 <motion.div
-                  animate={{ y: [0, -6, 0] }}
-                  transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-                >
-                  <c.icon className={`h-5 w-5 ${c.iconColor}`} />
-                </motion.div>
-                <h3 className="text-lg font-semibold">{c.title}</h3>
-                <span className="ml-auto text-[10px] px-2 py-1 rounded-full bg-white/5 border border-white/10">
-                  {c.tag}
-                </span>
-              </div>
-              <p className="mt-3 text-sm text-white/70 relative z-10">{c.desc}</p>
-            </motion.div>
-          ))}
+                  className={`absolute right-[-20%] bottom-[-20%] w-2/3 h-2/3 ${c.glow} blur-3xl rounded-full`}
+                  animate={{ scale: [1, 1.1, 1] }}
+                  transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+                />
+
+                <div className="flex items-center gap-3 relative z-10">
+                  <motion.div
+                    animate={{ y: [0, -6, 0] }}
+                    transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+                  >
+                    <c.icon className={`h-5 w-5 ${c.iconColor}`} />
+                  </motion.div>
+                  <h3 className="text-lg font-semibold">{c.title}</h3>
+                  <span className="ml-auto text-[10px] px-2 py-1 rounded-full bg-white/5 border border-white/10">
+                    {c.tag}
+                  </span>
+                </div>
+                <p className="mt-3 text-sm text-white/70 relative z-10">{c.desc}</p>
+              </CardTag>
+            )
+          })}
         </div>
       </div>
     </section>
