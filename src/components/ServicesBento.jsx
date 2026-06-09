@@ -57,7 +57,7 @@ const cards = [
     iconColor: "text-rose-400",
   },
   {
-    title: "FacoGO Copiloto Clínico",
+    title: "FacuGO Copiloto Clínico",
     icon: Stethoscope,
     desc: "Automatización de la atención con IA aplicada. Optimizamos la gestión de pacientes, reducimos la carga administrativa y agilizamos los flujos de trabajo médicos.",
     tag: "IA Clínica",
