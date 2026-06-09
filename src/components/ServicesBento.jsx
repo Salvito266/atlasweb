@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react"
 import { motion } from "framer-motion"
-import { Code2, Cpu, Cloud, ShieldCheck, Smartphone, BarChart3 } from "lucide-react"
+import { Code2, Cpu, Cloud, ShieldCheck, Smartphone, BarChart3, Stethoscope } from "lucide-react"
 import clsx from "clsx"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
@@ -56,6 +56,15 @@ const cards = [
     glow: "bg-rose-500/20",
     iconColor: "text-rose-400",
   },
+  {
+    title: "FacoGO Copiloto Clínico",
+    icon: Stethoscope,
+    desc: "Automatización de la atención con IA aplicada. Optimizamos la gestión de pacientes, reducimos la carga administrativa y agilizamos los flujos de trabajo médicos.",
+    tag: "IA Clínica",
+    glow: "bg-purple-500/20",
+    iconColor: "text-purple-400",
+    className: "md:col-span-2 lg:col-span-3",
+  },
 ]
 
 export default function ServicesBento() {
@@ -94,7 +103,8 @@ export default function ServicesBento() {
               key={c.title}
               className={clsx(
                 "service-card rounded-3xl p-6 border relative overflow-hidden",
-                "border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.02] backdrop-blur-xl"
+                "border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.02] backdrop-blur-xl",
+                c.className
               )}
               whileHover={{
                 scale: 1.04,
