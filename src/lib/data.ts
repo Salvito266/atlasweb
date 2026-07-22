@@ -95,13 +95,13 @@ export const caseStudies: CaseStudy[] = [
     imagePosition: "50% 25%", // Ajustado para que se vea el logo completo
   },
   {
-    id: "casakanata",
-    name: "Casa Kanata — Alojamiento",
-    result: "Sitio web para gestión de reservas y contacto",
+    id: "integralgo",
+    name: "IntegralGO — Clinica Quiropractica",
+    result: "Sitio web para gestión de horas y contacto",
     tech: ["React", "Tailwind CSS"],
-    image: "/casakanata.jpeg",
-    link: "https://casakanata.vercel.app",
-    imagePosition: "50% 50%", // Centrado por defecto para que se vea mejor
+    image: "/integralgo.jpeg",
+    link: "https://integralgo.cl",
+    imagePosition: "center", // Centrado por defecto para que se vea mejor
   },
 ];
 
