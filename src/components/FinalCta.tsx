@@ -20,7 +20,7 @@ export function FinalCta() {
               horas con una propuesta clara.
             </p>
             <div className="relative mt-10 flex justify-center">
-              <Button href="mailto:hola@atlasdevs.com" variant="primary">
+              <Button href="mailto:atlasdevscl@gmail.com" variant="primary">
                 Solicitar propuesta
               </Button>
             </div>

@@ -82,14 +82,14 @@ export const caseStudies: CaseStudy[] = [
     result: "Aumento considerablemente los pacientes",
     tech: ["Python", "FastAPI", "Sql"],
     image: "/facugo.png",
-    link: "https://www.atlasdevs.cl/facugo.html",
+    link: "/facugo.html",
     imagePosition: "top", // Mucho más abajo (ver el header donde dice facugo)
   },
   {
     id: "splitandes",
     name: "Split Andes — Rental de ski",
-    result: "Landing page para turismo y rental de ski",
-    tech: ["React", "Next.js", "Tailwind CSS"],
+    result: "Sistema de control de inventarios y landingpage para servicios",
+    tech: ["React", "Base de datos", "FastAPI"],
     image: "/split.png",
     link: "https://www.splitandes.cl",
     imagePosition: "50% 25%", // Ajustado para que se vea el logo completo
