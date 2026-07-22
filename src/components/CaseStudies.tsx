@@ -22,8 +22,8 @@ export function CaseStudies() {
             <Reveal key={project.id} delay={i * 0.1}>
               <a 
                 href={project.link || "#"}
-                target={project.link?.startsWith("http") ? "_blank" : undefined}
-                rel={project.link?.startsWith("http") ? "noopener noreferrer" : undefined}
+                target={project.link ? "_blank" : undefined}
+                rel={project.link ? "noopener noreferrer" : undefined}
                 className="group flex flex-col h-full overflow-hidden rounded-xl2 border border-border bg-surface/60 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-primary/40"
               >
                 <div className="relative flex h-48 items-center justify-center overflow-hidden bg-surface">
