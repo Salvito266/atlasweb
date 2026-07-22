@@ -1,16 +1,65 @@
-# React + Vite
+# Atlas Devs — Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Landing page premium para Atlas Devs, construida con **Next.js 15 (App Router)**, **TailwindCSS** y **Framer Motion**.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Next.js 15 + React 19 + TypeScript
+- TailwindCSS (tokens de diseño en `tailwind.config.ts`)
+- Framer Motion (animaciones fade-up / scale-in / hover lift)
+- lucide-react (iconografía)
+- Fuente Manrope vía `next/font/google`
 
-## React Compiler
+## Cómo correrlo
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev
+```
 
-## Expanding the ESLint configuration
+Abre [http://localhost:3000](http://localhost:3000).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Build de producción:
+
+```bash
+npm run build
+npm start
+```
+
+## Estructura
+
+```
+app/
+  layout.tsx       # Metadata, SEO, fuente Manrope
+  page.tsx          # Ensambla todas las secciones + JSON-LD
+  globals.css       # Tokens globales, glassmorphism, scrollbar
+components/
+  Navbar.tsx
+  Hero.tsx
+  Metrics.tsx
+  Services.tsx
+  CaseStudies.tsx
+  Process.tsx
+  FinalCta.tsx
+  Footer.tsx
+  ui/
+    Button.tsx
+    Reveal.tsx        # wrapper de animación scroll-reveal
+    ServiceIcon.tsx
+lib/
+  data.ts           # Todo el contenido (copy, servicios, métricas, casos)
+```
+
+## Personalización rápida
+
+- **Contenido**: edita `lib/data.ts` — ahí vive todo el copy, sin tocar componentes.
+- **Colores**: edita los tokens en `tailwind.config.ts` (`background`, `surface`, `border`, `primary`, `accent`, `text`).
+- **Casos de éxito**: reemplaza los bloques placeholder en `components/CaseStudies.tsx` por `<Image src={project.image} />` con screenshots reales (agrégalas en `/public`).
+- **Favicon / OG image**: agrega `favicon.ico` y `og-image.png` en `/public`.
+
+## Notas de producción
+
+- Mobile-first, probado desde 360px de ancho.
+- `prefers-reduced-motion` respetado globalmente en `globals.css`.
+- Foco de teclado visible en links y botones.
+- SEO: metadata completa + JSON-LD de tipo `Organization` en `app/page.tsx`.
