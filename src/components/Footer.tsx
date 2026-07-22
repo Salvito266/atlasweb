@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Mail, MessageCircle } from "lucide-react";
 import { footerLinks } from "@/lib/data";
 
@@ -9,14 +8,14 @@ export function Footer() {
     <footer className="border-t border-border">
       <div className="section-container flex flex-col gap-10 py-14 md:flex-row md:items-start md:justify-between">
         <div className="max-w-sm">
-          <Link href="#top" className="flex items-center gap-2.5">
+          <a href="#top" className="flex items-center gap-2.5">
             <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-accent text-sm font-extrabold text-white">
               A
             </span>
             <span className="text-lg font-bold tracking-tight text-text">
               Atlas Devs
             </span>
-          </Link>
+          </a>
           <p className="mt-4 text-sm leading-relaxed text-text-muted">
             Diseñamos y desarrollamos software, apps e inteligencia artificial
             para empresas que buscan escalar con tecnología.

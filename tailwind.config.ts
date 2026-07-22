@@ -3,8 +3,8 @@ import type { Config } from "tailwindcss";
 const config: Config = {
   darkMode: "class",
   content: [
-    "./app/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
+    "./index.html",
+    "./src/**/*.{ts,tsx}",
   ],
   theme: {
     extend: {
@@ -23,7 +23,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-manrope)", "system-ui", "sans-serif"],
+        sans: ["Manrope", "system-ui", "sans-serif"],
+        manrope: ["Manrope", "system-ui", "sans-serif"],
       },
       borderRadius: {
         xl2: "24px",

@@ -1,5 +1,4 @@
 import { clsx } from "clsx";
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import type { ReactNode } from "react";
 
@@ -29,7 +28,7 @@ export function Button({
   };
 
   return (
-    <Link href={href} className={clsx(base, variants[variant], className)}>
+    <a href={href} className={clsx(base, variants[variant], className)}>
       {children}
       {showIcon && (
         <ArrowRight
@@ -37,6 +36,6 @@ export function Button({
           strokeWidth={2.5}
         />
       )}
-    </Link>
+    </a>
   );
 }
