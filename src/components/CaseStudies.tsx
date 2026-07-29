@@ -3,6 +3,7 @@
 import { caseStudies } from "@/lib/data";
 import { Reveal } from "@/components/ui/Reveal";
 import { ArrowUpRight } from "lucide-react";
+import { LandingCarousel } from "@/components/LandingCarousel";
 
 export function CaseStudies() {
   return (
@@ -71,6 +72,8 @@ export function CaseStudies() {
             </Reveal>
           ))}
         </div>
+
+        <LandingCarousel />
       </div>
     </section>
   );

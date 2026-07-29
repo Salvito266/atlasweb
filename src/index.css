@@ -71,6 +71,28 @@ button:focus-visible {
   color: transparent;
 }
 
+@keyframes landing-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - 10px));
+  }
+}
+
+.landing-marquee {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: landing-marquee 36s linear infinite;
+  will-change: transform;
+}
+
+.landing-marquee:hover,
+.landing-marquee:focus-within {
+  animation-play-state: paused;
+}
+
 /* Reduced motion respected globally */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -80,6 +102,10 @@ button:focus-visible {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .landing-marquee-copy {
+    display: none;
   }
 }
 

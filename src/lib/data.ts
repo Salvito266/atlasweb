@@ -105,6 +105,55 @@ export const caseStudies: CaseStudy[] = [
   },
 ];
 
+export type LandingPage = {
+  id: string;
+  name: string;
+  description?: string;
+  image?: string;
+  imagePosition?: string;
+  imageFit?: "cover" | "contain" | "fill" | "scale-down" | "none";
+  link?: string;
+};
+
+// Agrega nuevas landing pages aquí para mostrarlas en el carrusel.
+export const landingPages: LandingPage[] = [
+  {
+    id: "landing-1",
+    name: "Equilibra Masajes",
+    description: "Landing informativa con enlaze para agendar sesiones.",
+    image: "/equilibra.png",
+    link: "https://www.equilibramasajes.cl",
+  },
+  {
+    id: "landing-2",
+    name: "Arca Andinda",
+    description: "Landing informativa para arriendo de cabañas con enlaze para agendar",
+    image: "/arca.png",
+    link: "https://www.arcandina.cl",
+  },
+  {
+    id: "landing-3",
+    name: "Casa Kanata",
+    description: "Landing informativa para arriendo de cabaña con enlaze para Airbnb",
+    image: "/casakanata.jpeg",
+    link: "https://casakanata.vercel.app",
+  },
+  {
+    id: "landing-4",
+    name: "IntegralGO",
+    description: "Landing informativa como extencion de pagina web completa",
+    image: "/integralgo.jpeg",
+    link: "https://www.integralgo.cl",
+  },
+  {
+    id: "landing-5",
+    name: "Refugio Las Raices",
+    description: "Landing informativa para arriendo de cabaña con enlaze para Booking",
+    image: "/lasraices.jpg",
+    link: "https://refugioraices.vercel.app",
+  },
+];
+
 export const process = [
   {
     step: "01",
